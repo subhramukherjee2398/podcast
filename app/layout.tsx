@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import ConvexClerkProvider from "./provider/ConvexClerkProvider";
+
 const manrope = Manrope({ subsets: ["latin"] });
 
 // const geistSans = localFont({
@@ -29,7 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.className}`}>{children}</body>
+      <body className={`${manrope.className}`}>
+        <ConvexClerkProvider>{children}</ConvexClerkProvider>
+      </body>
     </html>
   );
 }
